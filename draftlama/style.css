@@ -1,0 +1,44 @@
+
+body{
+  text-align: center;
+  background-color: #395144;
+    padding:100px 0;
+    background-color:#efefef
+  }
+  a, a:hover{
+    color:#333
+  }
+
+.dropdown-option{
+  margin-top: 20vh;
+  min-width: 15em;
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+  min-height: 3em;
+  max-height: 3em;
+  overflow: hidden;
+  top: 0.5em;
+  text-align: center;
+  white-space: nowrap;color: #444;
+  outline:none;
+  border: 0.06em solid transparent;
+  border-radius: 10px;  
+  cursor: pointer;
+}
+
+.dropdown-option input:focus+label{
+  background: #def;
+}
+
+.dropdown-option input{
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  position: absolute;
+  opacity:0.01 ;
+}
+
+.dropdown-option label{
+
+}

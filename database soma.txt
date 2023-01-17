@@ -1,0 +1,47 @@
+CREATE TABLE Users(
+Username VARCHAR(256) NOT NULL,
+Nama Varchar(256) NOT NULL,
+password VARCHAR(256) NOT NULL,
+Saldo INT NOT NULL,
+CONSTRAINT Users_Username_PK PRIMARY KEY(Username));
+
+create table tugas(
+username varchar(256) not null,
+nama_tugas varchar(256) NOT NULL,
+mata_kuliah varchar(20) NOT NULL,
+deadline date,
+link_pengumpulan varchar(256),
+constraint tugas_username_PK PRIMARY KEY(username),
+constraint tugas_username_FK FOREIGN KEY(username)
+references users(username));
+
+create table target(
+username varchar(256) not null,
+deskripsi varchar(256) NOT NULL,
+kategori_target char(50),
+nominal bigint,
+deadline date,
+link_pembelian varchar(256),
+constraint target_username_PK PRIMARY KEY(username),
+constraint target_username_FK FOREIGN KEY(username)
+references users(username));
+
+create table pendapatan(
+username varchar(256) not null,
+deskripsi varchar(256)NOT NULL,
+nominal bigint NOT NULL,
+tanggal_pemasukan date,
+kategori_pemasukan varchar(20),
+constraint pemasukan_username_PK PRIMARY KEY(username),
+constraint pemasukan_username_FK FOREIGN KEY(username)
+REFERENCES users(username));
+
+create table pengeluaran(
+username varchar(256) not null,
+deskripsi varchar(256) NOT NULL,
+nominal bigint NOT NULL,
+tanggal_pengeluaran date,
+kategori_pengeluaran varchar(20),
+constraint pengeluaran_username_PK PRIMARY KEY(username),
+constraint pengeluaran_username_FK FOREIGN KEY(username)
+REFERENCES users(username));
