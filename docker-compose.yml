@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  webserver:
+    container_name: Soma
+    build:
+      context: .
+    environment:
+      DB_HOST: postgres
+      DB_NAME: soma
+      DB_USER: soma
+      DB_PASSWORD: zranyasiriza
+    volumes:
+      - .:/var/www/html
+    ports:
+      - 8000:80
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: soma
+      POSTGRES_USER: soma
+      POSTGRES_PASSWORD: zranyasiriza
+    ports:
+      - 5432:5432
